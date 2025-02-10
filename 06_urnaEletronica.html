@@ -1,0 +1,81 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    PROBLEMA: URNA ELETRÔNICA
+    Faça um programa que simule a urna eletrônica.
+    A tela a ser apresentada deverá ser da seguinte forma:
+    As opções são:
+    1. Candidato Joãozinho
+    2. Candidato Mariazinha
+    3. Nulo
+    4. Branco
+    Entre com o seu voto:
+
+    O programa deverá ler os votos dos eleitores e, quando for entrado o número 0, apresentar as seguintes
+    informações:
+    a) O número de votos de cada candidato;
+    b) A porcentagem de votos nulos;
+    c) A porcentagem de votos brancos;
+    d) O candidato vencedor.
+    */
+
+    //ENTRADA
+    let joaozinho = 0;
+    let mariazinha = 0;
+    let nulo = 0;
+    let branco = 0;
+    let voto = 0;
+    let totalDeVotos = 0;
+
+
+    do {
+     voto = Number(prompt(`Insira seu voto`));
+
+     if(voto == 1){
+        joaozinho++
+     }
+     else if(voto == 2){
+        mariazinha++
+     }else if(voto == 3){
+        nulo++
+     }else if(voto == 4){
+        branco++
+     }
+
+     if(voto >= 1 && voto <= 4){{
+        totalDeVotos++
+
+     }}
+
+    }while(voto !== 0);
+    let porcentagemNulo = (nulo / totalDeVotos) * 100;
+    let porcentagemBranco = (branco / totalDeVotos) * 100;
+
+    let vencedor = "Empate";
+
+    if(joaozinho > mariazinha){
+        vencedor = "joaozinho";
+    }else if (mariazinha > joaozinho){
+        vencedor = "mariazinha";
+    }
+
+    alert(
+        "Resultado da votação:\n" +
+        "joãozinho " + joaozinho + " votos\n" +
+        "mariazinha: " + mariazinha + " votos\n" +
+        "Nulos: " + nulo + " votos ("+ porcentagemNulo.toFixed(2) + "%)\n" +
+        "Brancos: " + branco + " votos ("+ porcentagemBranco.toFixed(2) + "%)\n" +
+        "Vencedor: " + vencedor
+
+    );
+
+
+
+
+
+    //PROCESSAMENTO
+
+
+    //SAÍDA
+
+</script>

@@ -1,0 +1,68 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    PROBLEMA: PESQUISA DE IDADE
+    Foi feita uma pesquisa entre os habitantes de uma região. Foram coletados os dados de idade, sexo (M/F) e salário. Faça um programa que calcule e mostre:
+
+    a) A média dos salários do grupo;
+    b) A maior e a menor idade do grupo;
+    c) A quantidade de mulheres na região;
+    d) A idade e o sexo da pessoa que possui o menor salário;
+
+    Finalize a entrada de dados ao ser digitada uma idade negativa.
+    */
+
+    //ENTRADA
+    let somaSalarios = 0;
+    let totalDePessoas = 0;
+    let maiorIdade = 0;
+    let menorIdade = 999;
+    let mulheres = 0;
+    let menorSalario = 99999;
+    let idadeMenorSalario = 0;
+    let sexoMenorSalario = "";
+
+    while(true){
+        let idade = Number(prompt("Digite a idade(ou número negativo para encerrar)"));
+
+        if(idade < 0){
+            break;
+        }
+        let sexo = prompt("Digite o sexo m/f:").toUpperCase();
+        let salario = Number(prompt("digite seu salário"));
+
+        somaSalarios += salario;
+        totalDePessoas++;
+        if(idade > maiorIdade){
+            maiorIdade = idade;
+        }
+        if(idade < menorIdade){
+            menorIdade = idade;
+        }
+        if(sexo == "F"){
+            mulheres++
+        }
+        if(salario < menorSalario){
+            menorSalario = salario;
+            idadeMenorSalario = idade;
+            sexoMenorSalario = sexo;
+        }
+    }
+    let mediaDosSalarios = totalDePessoas > 0 ? (somaSalarios / totalDePessoas).toFixed(2) : 0;
+
+    alert(
+        "Resultado:\n" +
+        "1.Média dos salários: R$ " + mediaDosSalarios + "\n" +
+        "2. Maior idade: " + maiorIdade + "\n" +
+        "Menor idade: " + menorIdade + "\n" +
+        "3. quantidades de mulheres " + mulheres + "\n" +
+        "4. Menor salário:R$ " + menorSalario.toFixed(2) +
+         "(idade : " + idadeMenorSalario + ", sexo:" + sexoMenorSalario +")"
+    );
+
+    //PROCESSAMENTO
+
+
+    //SAÍDA
+
+</script>
